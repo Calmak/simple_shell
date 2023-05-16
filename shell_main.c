@@ -16,6 +16,10 @@ int main(int argc, char *argv[], char *envp[])
         char **string_tokens = tokenise(input);
         char *cmd = getcommand(string_tokens);
         excecute_cmd(cmd);
+        
+        free(input);
+        free(stringtokens);
+        free(cmd);
     }
     return (0);
 }
