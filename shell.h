@@ -113,7 +113,7 @@ int _putchar(char c);
 char *get_user_input(void);
 char **tokenise(char *input);
 /*char *getcommand(char **command);*/
-void execute_cmd(char *cmd);
+void execute_cmd(char **cmd);
 void sigintHandler(__attribute__((unused))int sig_num);
 extern char **environ;
 
