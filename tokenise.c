@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "shell.h"
+/**
+*tokenise - get input and break it down to commands and arguments
+*@input- input to tokenise
+*Return- pointer of arrays with string tokens
+*/
 
 char **tokenise(char *input)
 {

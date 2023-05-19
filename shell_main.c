@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include "shell.h"
 /**
@@ -14,8 +15,8 @@ int main(int argc, char *argv[], char *envp[])
         _putchar('$');
         char *input = get_user_input();
         char **string_tokens = tokenise(input);
-        char *cmd = getcommand(string_tokens);
-        excecute_cmd(cmd);
+        /**char *cmd = getcommand(string_tokens);*/
+        excecute_cmd(string_tokens);
         
         free(input);
         free(stringtokens);
