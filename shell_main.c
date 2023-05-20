@@ -8,7 +8,7 @@
 *@envp: environment variables
 *Returns: Always 0
 */
-int main(int argc, char *argv[], char *envp[])
+int main(void)
 {
     char *input;
     char **string_tokens;
@@ -17,10 +17,10 @@ int main(int argc, char *argv[], char *envp[])
         _putchar('$');
         input = get_user_input();
         string_tokens = tokenise(input);
-        excecute_cmd(string_tokens);
+        execute_cmd(string_tokens);
         
         free(input);
-        free(stringtokens);
+        free(string_tokens);
         free(cmd);
     }
     return (0);
