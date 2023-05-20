@@ -10,12 +10,13 @@
 */
 int main(int argc, char *argv[], char *envp[])
 {
+    char *input;
+    char **string_tokens;
     while (1)
     {
         _putchar('$');
-        char *input = get_user_input();
-        char **string_tokens = tokenise(input);
-        /**char *cmd = getcommand(string_tokens);*/
+        *input = get_user_input();
+        **string_tokens = tokenise(input);
         excecute_cmd(string_tokens);
         
         free(input);
