@@ -16,8 +16,10 @@ int main(void)
     {
         _putchar('$');
         input = get_user_input();
-        string_tokens = tokenise(input);
-        execute_cmd(string_tokens);
+        if (input != NULL)
+            string_tokens = tokenise(input);
+        if (string_tokens != NULL)
+            execute_cmd(string_tokens);
     }
     free(input);
     free(string_tokens);
