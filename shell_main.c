@@ -21,7 +21,6 @@ int main(void)
         
         free(input);
         free(string_tokens);
-        free(cmd);
     }
     return (0);
 }
