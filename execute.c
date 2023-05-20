@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "shell.h"
+#include <string.h>
 
 void execute_cmd(char **cmd)
 {
