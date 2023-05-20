@@ -15,8 +15,8 @@ int main(int argc, char *argv[], char *envp[])
     while (1)
     {
         _putchar('$');
-        *input = get_user_input();
-        **string_tokens = tokenise(input);
+        input = get_user_input();
+        string_tokens = tokenise(input);
         excecute_cmd(string_tokens);
         
         free(input);
