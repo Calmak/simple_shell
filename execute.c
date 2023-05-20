@@ -7,6 +7,7 @@ void execute_cmd(char **cmd)
 	int status;
         pid_t pid; 
 	int num_cmd = 0;
+	int i;
 	
 	if (strcmp(cmd[0], "cd") == 0) 
 	{
@@ -21,7 +22,7 @@ void execute_cmd(char **cmd)
 	else if (strcmp(cmd[0], "env") == 0) 
 	{
     		/**Print the environment variables.*/
-    		for (int i = 0; i < num_cmd; i++)
+    		for (i = 0; i < num_cmd; i++)
 		{
       			printf("%s=%s\n", cmd[i], getenv(cmd[i]));
     		}
