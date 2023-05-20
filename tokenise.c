@@ -31,8 +31,8 @@ char **tokenise(char *input)
         /*Continue to next token*/
         token = strtok(NULL, delim);
     }
-    free(delim);
-    free(token);
+    /*free(delim);
+    free(token);*/
     /*set last index to NULL*/
     tokens[len] = NULL;
     return tokens;
