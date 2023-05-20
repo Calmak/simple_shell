@@ -18,9 +18,8 @@ int main(void)
         input = get_user_input();
         string_tokens = tokenise(input);
         execute_cmd(string_tokens);
-        
-        free(input);
-        free(string_tokens);
     }
+    free(input);
+    free(string_tokens);
     return (0);
 }
