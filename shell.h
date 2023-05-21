@@ -32,6 +32,6 @@ char *_strcpy(char *, char *);
 void shell_exit(char **cmd);
 void shell_cd(char **cmd);
 void shell_env(char **cmd);
-void shell_cd(char **cmd);
+
 
 #endif /* _SHELL*/
