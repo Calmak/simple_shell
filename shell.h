@@ -13,7 +13,7 @@
 typedef struct _function
 {
 	char *name;
-	void (*_function)(char **cmd);
+	void (*_function)(char **cmd, int argc, char **envp);
 } _function;
 
 /**shell functions*/
@@ -29,9 +29,9 @@ char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
 
 /**Shell builtin functions*/
-void shell_exit(char **cmd);
-void shell_cd(char **cmd);
-void shell_env(char **cmd);
+void shell_exit(char **cmd, int argc, char **envp);
+void shell_cd(char **cmd, int argc, char **envp);
+void shell_env(char **cmd, int argc, char **envp);
 
 
 #endif /* _SHELL*/
