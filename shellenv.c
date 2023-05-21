@@ -1,3 +1,4 @@
+#include <string.h>
 #include "shell.h"
 /**
  * shell_env - execute env
