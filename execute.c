@@ -5,8 +5,11 @@
 /**
  * execute_cmd - runs builtin and external shell cmds
  * @cmd:pointer to array of commands
+ * @argc: number of arguments
+ * @argv: arguments passed
+ * @envp; environment variables
  */
-void execute_cmd(char **cmd)
+void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 {
 	int status;
     	pid_t pid; 

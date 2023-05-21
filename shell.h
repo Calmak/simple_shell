@@ -19,7 +19,7 @@ typedef struct _function
 /**shell functions*/
 char *get_user_input(void);
 char **tokenise(char *input);
-void execute_cmd(char **cmd);
+void execute_cmd(char **cmd, int argc, char **argv, char **envp);
 
 /**own implementation of std library functions*/
 int _putchar(char c);
