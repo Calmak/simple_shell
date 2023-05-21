@@ -4,9 +4,8 @@
  * shell_cd - executes th cd cmd
  * @cmd:pointer to string cd
  * */
-void shell_cd(char **cmd, int argc, char **envp)
+void shell_cd(char **cmd, int argc, char **envp __attribute__((unused)))
 {
-	envp = NULL;
 	/**to do*/
 	if (strcmp(cmd[0],"cd") == 0)
 	{
