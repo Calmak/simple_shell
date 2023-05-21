@@ -6,4 +6,8 @@
 void shell_cd(char **cmd)
 {
 	/**to do*/
+	if (strcmp(cmd[0],"cd") == 0)
+	{
+		exit(0);
+	}
 }
