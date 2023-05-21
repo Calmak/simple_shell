@@ -6,6 +6,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+/**
+*Structure to represent a function pointer
+*for our builtin functions
+*/
+typedef struct _function
+{
+    char *name;
+    void (*_function)(char **cmd);
+}_function;
 
 /**shell functions*/
 char *get_user_input(void);
