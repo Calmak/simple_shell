@@ -9,8 +9,6 @@
  */
 void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
 {
-	envp = environ;
-	argc = 0;
 	/**To do*/
 	if (strcmp(cmd[0],"env") == 0)
 	{
