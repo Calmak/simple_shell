@@ -22,7 +22,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
     	{
         	if (strcmp(_functions[i].name , cmd[0]) == 0)
         	{
-            		_functions[i]._function(cmd), argc, envp);
+            		_functions[i]._function(cmd, argc, envp);
             		return;
         	}
     	}
