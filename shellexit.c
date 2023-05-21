@@ -6,4 +6,8 @@
 void shell_exit(char **cmd)
 {
 	/**To do*/
+	if (strcmp(cmd[0],"exit") == 0)
+	{
+		exit(0);
+	}
 }
