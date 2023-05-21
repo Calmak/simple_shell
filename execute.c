@@ -30,7 +30,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
     	if (pid == 0)/**child process*/
     	{
         	execvp(cmd[0],cmd);/**run command*/
-		perror("shell error");
+		perror(agrv[0);
 		exit(1);
     	}
     	else if (pid > 0) /**parent process*/
@@ -44,6 +44,6 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
     	}
    	 else
     	{
-        	perror("shell error");
+        	perror(argv[0]);
    	}
 }
