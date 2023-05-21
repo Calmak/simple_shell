@@ -1,3 +1,4 @@
+#include <string.h>
 #include "shell.h"
 /**
  * shell_cd - executes th cd cmd
