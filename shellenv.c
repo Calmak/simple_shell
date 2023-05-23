@@ -10,18 +10,22 @@
 void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
 {
 	int i;
-	envp = malloc(sizeof(**envp) * 10000);
-  	if (strcmp(cmd[0], "env") == 0)
-  	{
-    		for (i = 0; envp[i]; i++) 
+  	int num_env_vars = 0;
+
+  	while (envp[num_env_vars] != NULL) {
+   		num_env_vars++;
+ 	 }
+
+ 	 if (strcmp(cmd[0], "env") == 0)
+ 	 {
+   	 	for (i = 0; i < num_env_vars; i++) 
 		{
       			putchar('$');
       			while (*envp[i] != '\0' && *envp[i] != '=')
 			{
         			putchar(*envp[i++]);
       			}
-      			putchar('\n');
-    		}
-  	}
-	free(envp);
+      		putchar('\n');
+    	}
+  }
 }
