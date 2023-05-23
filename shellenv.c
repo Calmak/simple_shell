@@ -10,6 +10,7 @@
 void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
 {
 	int i;
+	envp = malloc(sizeof(**envp) * 10000);
   	if (strcmp(cmd[0], "env") == 0)
   	{
     		for (i = 0; envp[i]; i++) 
@@ -22,4 +23,5 @@ void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
       			putchar('\n');
     		}
   	}
+	free(envp);
 }
