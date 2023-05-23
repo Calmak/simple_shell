@@ -7,17 +7,18 @@
  * shell_env - execute env
  * @cmd: pointer to string env
  */
-void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
+void shell_env(char **cmd, int argc __attribute__((unused)), char **envp, int argc __attribute__((unused)))
 {
 	/**To do*/
+	char **envpc= environ;
+	
 	if (strcmp(cmd[0],"env") == 0)
 	{
-  		while (*envp != NULL)
+  		
+		while (*envpc != NULL)
 		{
-    			_putchar(' ');
-    			puts(*envp);
-    			_putchar('\n');
-    			envp += 2;
-  		}
+			printf("%s\n", *envpc);
+    			envpc++;
+ 		 }
 	}
 }
