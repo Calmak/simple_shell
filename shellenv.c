@@ -7,7 +7,7 @@
  * shell_env - execute env
  * @cmd: pointer to string env
  */
-void shell_env(char **cmd, int argc __attribute__((unused)), char **envp __attribute__((unused)))
+void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
 {
 	
 	if (strcmp(cmd[0],"env") == 0)
