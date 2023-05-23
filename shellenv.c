@@ -19,7 +19,7 @@ void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
     			_putchar(']');
     			_putchar(':');
     			_putchar(' ');
-    			puts(envp[i]);
+    			mputs(envp[i]);
 		}
     	}
 }
