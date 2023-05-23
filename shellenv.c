@@ -13,6 +13,13 @@ void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
  	if (strcmp(cmd[0], "env") == 0)
  	 {
    	 	for (i = 0 ; envp[i] ; i++) 
-			printf( "envp[%d]: %s\n", i, envp[i] );
+		{
+			putchar('[');
+    			putchar('0' + i);
+    			putchar(']');
+    			putchar(':');
+    			putchar(' ');
+    			puts(envp[i]);
+		}
     	}
 }
