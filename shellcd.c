@@ -7,7 +7,7 @@
 void shell_cd(char **cmd, int argc, char **envp __attribute__((unused)))
 {
 	/**to do*/
-	if (strcmp(cmd[0],"cd") == 0)
+	if (_strcmp(cmd[0],"cd") == 0)
 	{
 		 if (argc == 1)
 			 chdir(getenv("HOME"));
