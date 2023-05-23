@@ -20,7 +20,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	size = sizeof(_functions)/sizeof(_function);
 	for (i = 0; i < size;i++)
     	{
-        	if (strcmp(_functions[i].name , cmd[0]) == 0)
+        	if (_strcmp(_functions[i].name , cmd[0]) == 0)
         	{
             		_functions[i]._function(cmd, argc, envp);
             		return;
