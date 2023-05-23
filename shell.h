@@ -27,7 +27,7 @@ int _strlen(char *);
 int _strcmp(char *, char *);
 char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
-void _puts(const char *to_ouput)
+void mputs(const char *to_ouput)
 
 /**Shell builtin functions*/
 void shell_exit(char **cmd, int argc, char **envp);
