@@ -14,7 +14,6 @@ void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
 	{
   		while (*envp != NULL)
 		{
-    			_putchar('$');
     			_putchar(' ');
     			puts(*envp);
     			_putchar('\n');
