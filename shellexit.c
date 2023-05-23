@@ -7,7 +7,7 @@
 void shell_exit(char **cmd, int argc __attribute__((unused)), char **envp __attribute__((unused)))
 {
 	/**To do*/
-	if (strcmp(cmd[0],"exit") == 0)
+	if (_strcmp(cmd[0],"exit") == 0)
 	{
 		exit(0);
 	}
