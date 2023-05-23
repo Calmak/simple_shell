@@ -24,7 +24,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp);
 /**own implementation of std library functions*/
 int _putchar(char c);
 int _strlen(char *);
-int _strcmp(char *, char *);
+int _strcmp(const char *string1, const char *string2);
 char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
 void mputs(const char *to_ouput);
