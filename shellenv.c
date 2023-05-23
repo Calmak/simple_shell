@@ -9,15 +9,10 @@
  */
 void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
 {
-	
+	int i;
 	if (strcmp(cmd[0],"env") == 0)
 	{
-		while (envp != NULL)
-		{
-    			putchar('$');
-    			while (envp != '\0' &&*envp != '=')
-      				putchar(envp++);
-   			 putchar('\n');
-  		}
+		for (i = 0 ; envp[i] ; i++)
+			printf( "envp[%d]: %s\n", i, envp[i] );
 	}
 }
