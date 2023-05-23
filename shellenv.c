@@ -14,11 +14,11 @@ void shell_env(char **cmd, int argc __attribute__((unused)), char **envp)
  	 {
    	 	for (i = 0 ; envp[i] ; i++) 
 		{
-			putchar('[');
-    			putchar('0' + i);
-    			putchar(']');
-    			putchar(':');
-    			putchar(' ');
+			_putchar('[');
+    			_putchar('0' + i);
+    			_putchar(']');
+    			_putchar(':');
+    			_putchar(' ');
     			puts(envp[i]);
 		}
     	}
