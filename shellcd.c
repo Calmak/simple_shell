@@ -9,7 +9,7 @@
 void shell_cd(char **cmd, int argc, char **envp __attribute__((unused)))
 {
 	char *current;
-	
+
 	if (_strcmp(cmd[0], "cd") == 0)
 	{
 		if (argc == 1)
