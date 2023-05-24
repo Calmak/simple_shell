@@ -26,7 +26,7 @@ char **tokenise(char *input)
         if (len >= size)/*not enough memory*/
         {
             /*allocate more memory*/
-            tokens = _realloc(tokens, len * sizeof(char*));
+            tokens = _realloc(tokens,0, len * sizeof(char*));
         }
         /*Continue to next token*/
         token = strtok(NULL, delim);
