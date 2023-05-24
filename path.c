@@ -6,7 +6,8 @@ int find_cmd(char *cmd, char **argv)
 {
   char *path = getenv("PATH");
   int is_found = 0;
-  char *dir
+  char *dir;
+  char *full_path;
 
   if (path == NULL) 
   {
@@ -15,7 +16,7 @@ int find_cmd(char *cmd, char **argv)
   }
   for (*dir in path)
   {
-    char *full_path = malloc(strlen(dir) + strlen(cmd) + 2);
+    fullpath = malloc(strlen(dir) + strlen(cmd) + 2);
     strcpy(full_path, dir);
     strcat(full_path, "/");
     strcat(full_path, cmd);
