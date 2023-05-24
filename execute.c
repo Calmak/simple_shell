@@ -38,7 +38,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	pid = fork(); /**Launch a child process*/
     	if (pid == 0)/**child process*/
     	{
-        	execvp(cmd[0],cmd);/**run command*/
+        	execve(cmd[0],cmd,envp);/**run command*/
 		perror(argv[0]);
 		exit(1);
     	}
