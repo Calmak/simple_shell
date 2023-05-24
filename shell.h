@@ -28,6 +28,7 @@ int _strcmp(const char *string1, const char *string2);
 char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
 void mputs(const char *to_ouput);
+int find_cmd(char *cmd, char **argv);
 
 /**Shell builtin functions*/
 void shell_exit(char **cmd, int argc, char **envp);
