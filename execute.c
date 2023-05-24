@@ -15,17 +15,17 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
     	pid_t pid; 
 	unsigned long int i;
 	size_t size;
-	/*int avail;*/
+	int avail;
 	_function _functions[] = {{"cd" , shell_cd} , {"exit" , shell_exit} , {"env" , shell_env}};
 	
 	size = sizeof(_functions)/sizeof(_function);
-	/*avail = find_cmd(cmd[0],argv);
+	avail = find_cmd(cmd[0],argv);
 
     	if (!avail)
 	{
       		perror(argv[0]);
       		return;
-    	}*/
+    	}
 	
 	for (i = 0; i < size;i++)
     	{
