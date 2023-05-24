@@ -21,7 +21,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	size = sizeof(_functions)/sizeof(_function);
 	avail = find_cmd(cmd[0],argv);
 
-    	if (avail)
+    	if (!avail)
 	{
       		perror(argv[0]);
       		return;
