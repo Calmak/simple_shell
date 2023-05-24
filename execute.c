@@ -7,10 +7,11 @@
  * @cmd:pointer to array of commands
  * @argc: number of arguments
  * @argv: arguments passed
- * @envp; environment variables
+ * @envp: environment variables
  */
 void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 {
+<<<<<<< HEAD
 	int status;
 	pid_t pid;
 	unsigned long int i;
@@ -21,28 +22,38 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	
 	size = sizeof(_functions)/sizeof(_function);
 	avail = find_cmd(cmd[0],argv);
+=======
+	int status, avail;
+	pid_t pid;
+	unsigned long int i;
+	size_t size;
+	_function _functions[] = {{"cd", shell_cd},
+		{"exit", shell_exit}, {"env", shell_env}};
+>>>>>>> 035c7f33e4dd52cfa473cc58b17fac4788af8d0a
 
-    	if (avail)
+	size = sizeof(_functions) / sizeof(_function);
+	avail = find_cmd(cmd[0], argv);
+	if (avail)
 	{
-      		perror(argv[0]);
-      		return;
-    	}
-	
-	for (i = 0; i < size;i++)
-    	{
-        	if (_strcmp(_functions[i].name , cmd[0]) == 0)
-        	{
-            		_functions[i]._function(cmd, argc, envp);
-            		return;
-        	}
-    	}
+		perror(argv[0]);
+		return;
+	}
+	for (i = 0; i < size; i++)
+	{
+		if (_strcmp(_functions[i].name, cmd[0]) == 0)
+		{
+			_functions[i]._function(cmd, argc, envp);
+			return;
+		}
+	}
 	pid = fork(); /**Launch a child process*/
-    	if (pid == 0)/**child process*/
-    	{
-        	execve(cmd[0],cmd,envp);/**run command*/
+	if (pid == 0)/**child process*/
+	{
+		execve(cmd[0], cmd, envp);/**run command*/
 		perror(argv[0]);
 		exit(1);
 	}
+<<<<<<< HEAD
 	else if (pid > 0)/**parent process*/
 	{
 		do{
@@ -50,6 +61,14 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 			waitpid(pid, &status, WUNTRACED);
 		}
 		while(!WIFEXITED(status) && !WIFSIGNALED(status));
+=======
+	else if (pid > 0) /**parent process*/
+	{
+		do {
+		/**wait for child process to exit*/
+			waitpid(pid, &status, WUNTRACED);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+>>>>>>> 035c7f33e4dd52cfa473cc58b17fac4788af8d0a
 	}
 	else
 	{

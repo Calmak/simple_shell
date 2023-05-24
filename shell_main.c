@@ -3,12 +3,12 @@
 #include "shell.h"
 /**
 * main - runs the main loop of the shell
-* @arc: number of arguments passed
+* @argc: number of arguments passed
 * @argv: arguments passed
 * @envp: enviroment variables
-* Returns: Always 0
+* Return: Always 0
 */
-int main(int argc, char **argv,char **envp)
+int main(int argc, char **argv, char **envp)
 {
 	char *input;
 	char **string_tokens;

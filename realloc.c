@@ -9,12 +9,12 @@
  * Return: pointer to integer
  */
 
-void *_realloc(void *pointer, unsigned int new,unsigned int old)
+void *_realloc(void *pointer, unsigned int new, unsigned int old)
 {
 	unsigned int lower = 0;
 	char *p;
 	unsigned int i;
-	
+
 	if (new == old)
 		return (pointer);
 	if (pointer == NULL)
