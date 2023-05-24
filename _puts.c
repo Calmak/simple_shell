@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-* _puts - outputs the contents of a string
+* mputs - outputs the contents of a string
 * @to_output: string to output
 */
 void mputs(const char *to_output)
