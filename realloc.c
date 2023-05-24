@@ -17,7 +17,7 @@ void *_realloc(void *pointer, unsigned int old, unsigned int new)
 
 	if (new == old)
 		return (pointer);
-	if (ptr == NULL)
+	if (pointer == NULL)
 		return (malloc(new));
 	if (new == 0 &&  pointer != NULL)
 	{
