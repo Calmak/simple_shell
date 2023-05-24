@@ -24,7 +24,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
     	if (!avail)
 	{
       		perror(argv[0]);
-      		continue;
+      		return;
     	}
 	
 	for (i = 0; i < size;i++)
