@@ -14,22 +14,22 @@ int find_cmd(char *cmd, char **argv)
     perror(argv[0]);
     return -1;
   }
-  for (*dir in path)
+  while (path)
   {
-    fullpath = malloc(strlen(dir) + strlen(cmd) + 2);
-    strcpy(full_path, dir);
-    strcat(full_path, "/");
-    strcat(full_path, cmd);
+      fullpath = malloc(strlen(dir) + strlen(cmd) + 2);
+      strcpy(full_path, dir);
+      strcat(full_path, "/");
+      strcat(full_path, cmd);
 
-    if (access(full_path, X_OK) == 0) 
-    {
-      is_found = 1;
-      break;
+      if (access(full_path, X_OK) == 0) 
+      {
+        is_found = 1;
+        break;
+      }
+
+      free(full_path);
     }
 
-    free(full_path);
-  }
-
-  return is_found;
+    return is_found;
 }
 
