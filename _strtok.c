@@ -1,28 +1,45 @@
-char *my_strtok(char *str, const char *delim) {
+#include "shell_h"
+
+char *_strtok(char *string, const char *delim)
+{
   static char *olds;
+  char *token;
 
-  if (str == NULL) {
-    str = olds;
+  if (string == NULL)
+  {
+      string = olds;
   }
 
-  // Scan leading delimiters.
-  while (*str && strchr(delim, *str)) {
-    *str++ = '\0';
+  
+  while (*string && _strchr(delim, *string))
+  {
+      *string++ = '\0';
   }
 
-  if (*str == '\0') {
+  if (*string == '\0')
+  {
     return NULL;
   }
 
-  // Find the end of the token.
-  char *token = str;
-  while (*token && !strchr(delim, *token)) {
-    token++;
+  token = string;
+  while (*token && !_strchr(delim, *token))
+  {
+      token++;
   }
-
-  // Terminate the token and make OLDS point past it.
   *token = '\0';
   olds = token + 1;
 
   return str;
 }
+
+char *_strchr(const char *area, int num) {
+  char *a = NULL;
+
+  while (*area) {
+    if (*area == num) {
+      a = area;
+      break;
+    }
+
+    area++;
+  }
