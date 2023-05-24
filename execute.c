@@ -18,8 +18,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	_function _functions[] = {{"cd" , shell_cd} , {"exit" , shell_exit} , {"env" , shell_env}};
 	
 	size = sizeof(_functions)/sizeof(_function);
-	if (cmd == NULL)
-		return;
+	
 	for (i = 0; i < size;i++)
     	{
         	if (_strcmp(_functions[i].name , cmd[0]) == 0)
