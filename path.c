@@ -5,14 +5,15 @@
 int find_cmd(char *cmd, char **argv)
 {
   char *path = getenv("PATH");
-   int is_found = 0;
+  int is_found = 0;
+  char *dir
 
   if (path == NULL) 
   {
     perror(argv[0]);
     return -1;
   }
-  for (char *dir in path)
+  for (*dir in path)
   {
     char *full_path = malloc(strlen(dir) + strlen(cmd) + 2);
     strcpy(full_path, dir);
