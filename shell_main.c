@@ -17,10 +17,12 @@ int main(int argc, char **argv,char **envp)
 	{
 		_putchar('$');
 		input = get_user_input();
-		if (input != NULL)
-			string_tokens = tokenise(input);
-		if (string_tokens != NULL)
-			execute_cmd(string_tokens, argc, argv, envp);
+		if (input == NULL)
+			break;
+		string_tokens = tokenise(input);
+		if (string_tokens == NULL)
+			break;
+		execute_cmd(string_tokens, argc, argv, envp);
 	}
 	free(input);
 	free(string_tokens);
