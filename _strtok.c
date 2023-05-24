@@ -1,5 +1,17 @@
 #include "shell.h"
 
+char *_strchr(const char *area, int num) {
+  char *a = NULL;
+
+  while (*area) {
+    if (*area == num) {
+      a = area;
+      break;
+    }
+
+    area++;
+  }
+
 char *_strtok(char *string, const char *delim)
 {
   static char *olds;
@@ -32,14 +44,4 @@ char *_strtok(char *string, const char *delim)
   return str;
 }
 
-char *_strchr(const char *area, int num) {
-  char *a = NULL;
 
-  while (*area) {
-    if (*area == num) {
-      a = area;
-      break;
-    }
-
-    area++;
-  }
