@@ -4,10 +4,9 @@
 /**
  * _realloc - function that reallocs a memory block
  * @pointer: value 1
- * @old: value 2
- * @new: value 3
- *
- * Return: pointer integer
+ * @old: previous size
+ * @new: current size
+ * Return: pointer to integer
  */
 
 void *_realloc(void *pointer, unsigned int old, unsigned int new)
