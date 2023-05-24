@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char *_strchr(const char *area, int num) {
+/*char *_strchr(const char *area, int num) {
   char *a = NULL;
 
   while (*area) {
@@ -10,7 +10,7 @@ char *_strchr(const char *area, int num) {
     }
 
     area++;
-  }
+  }*/
 
 char *_strtok(char *string, const char *delim)
 {
@@ -23,7 +23,7 @@ char *_strtok(char *string, const char *delim)
   }
 
   
-  while (*string && _strchr(delim, *string))
+  while (*string && strchr(delim, *string))
   {
       *string++ = '\0';
   }
@@ -34,7 +34,7 @@ char *_strtok(char *string, const char *delim)
   }
 
   token = string;
-  while (*token && !_strchr(delim, *token))
+  while (*token && !strchr(delim, *token))
   {
       token++;
   }
