@@ -3,40 +3,41 @@
 
 /**
  * _realloc - function that reallocs a memory block
- * @ptr: value 1
- * @old_size: value 2
- * @new_size: value 3
+ * @pointer: value 1
+ * @old: value 2
+ * @new: value 3
  *
  * Return: pointer integer
  */
 
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *pointer, unsigned int old, unsigned int new)
 {
-	char *point;
-	unsigned int i, lower = 0;
+	unsigned int lower = 0;
+	char *p;
+	unsigned int i;
 
-	if (new_size == old_size)
-		return (ptr);
+	if (new == old)
+		return (pointer);
 	if (ptr == NULL)
-		return (malloc(new_size));
-	if (new_size == 0 &&  ptr != NULL)
+		return (malloc(new));
+	if (new == 0 &&  pointer != NULL)
 	{
-		free(ptr);
+		free(pointer);
 		return (NULL);
 	}
-	if (new_size < old_size)
-		lower = new_size;
+	if (new < old)
+		lower = new;
 	else
-		lower = old_size;
-	point = malloc(new_size);
-	if (point == NULL)
+		lower = old;
+	p = malloc(new);
+	if (p == NULL)
 		return (NULL);
 	for (i = 0; i < lower; i++)
 	{
 
-		point[i] = ((char *) ptr)[i];
+		p[i] = ((char *) pointer)[i];
 	}
-	free(ptr);
-	return (point);
+	free(pointer);
+	return (p);
 }
 
