@@ -19,13 +19,13 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	_function _functions[] = {{"cd" , shell_cd} , {"exit" , shell_exit} , {"env" , shell_env}};
 	
 	size = sizeof(_functions)/sizeof(_function);
-	/**avail = find_cmd(cmd[0],argv);*/
+	avail = find_cmd(cmd[0],argv);
 
-    	/*if (avail)
+    	if (avail)
 	{
       		perror(argv[0]);
       		return;
-    	}*/
+    	}
 	
 	for (i = 0; i < size;i++)
     	{
