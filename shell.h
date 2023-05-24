@@ -20,6 +20,8 @@ typedef struct _function
 char *get_user_input(void);
 char **tokenise(char *input);
 void execute_cmd(char **cmd, int argc, char **argv, char **envp);
+void *_realloc(void *pointer, unsigned int old, unsigned int new);
+char *_strtok(char *string, const char *delim);
 
 /**own implementation of std library functions*/
 int _putchar(char c);
@@ -28,6 +30,7 @@ int _strcmp(const char *string1, const char *string2);
 char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
 void mputs(const char *to_ouput);
+int find_cmd(char *cmd, char **argv);
 
 /**Shell builtin functions*/
 void shell_exit(char **cmd, int argc, char **envp);

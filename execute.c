@@ -15,21 +15,31 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	pid_t pid;
 	unsigned long int i;
 	size_t size;
-	_function _functions[] = {{"cd", shell_cd},
-		{"exit", shell_exit}, {"env", shell_env}};
-	size = sizeof(_functions) / sizeof(_function);
-	for (i = 0; i < size; i++)
+
+	int avail;
+	_function _functions[] = {{"cd" , shell_cd} , {"exit" , shell_exit} , {"env" , shell_env}};
+	
+	size = sizeof(_functions)/sizeof(_function);
+	avail = find_cmd(cmd[0],argv);
+
+    	if (avail)
 	{
-		if (_strcmp(_functions[i].name, cmd[0]) ==)
-		{
-			_functions[i]._function(cmd, argc, envp);
-			return;
-		}
-	}
-	pid = fork();/**Launch a child process*/
-	if (pid == 0)/**child process*/
-	{
-		execvp(cmd[0], cmd);/**run command*/
+      		perror(argv[0]);
+      		return;
+    	}
+	
+	for (i = 0; i < size;i++)
+    	{
+        	if (_strcmp(_functions[i].name , cmd[0]) == 0)
+        	{
+            		_functions[i]._function(cmd, argc, envp);
+            		return;
+        	}
+    	}
+	pid = fork(); /**Launch a child process*/
+    	if (pid == 0)/**child process*/
+    	{
+        	execve(cmd[0],cmd,envp);/**run command*/
 		perror(argv[0]);
 		exit(1);
 	}
