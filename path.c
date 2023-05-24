@@ -27,8 +27,9 @@ int find_cmd(char *cmd, char **argv)
         break;
       }
 
-      free(full_path);
+    path++;
     }
+    free(full_path);
 
     return is_found;
 }
