@@ -11,26 +11,12 @@
  */
 void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 {
-<<<<<<< HEAD
-	int status;
-	pid_t pid;
-	unsigned long int i;
-	size_t size;
-
-	int avail;
-	_function _functions[] = {{"cd" , shell_cd} , {"exit" , shell_exit} , {"env" , shell_env}};
-	
-	size = sizeof(_functions)/sizeof(_function);
-	avail = find_cmd(cmd[0],argv);
-=======
 	int status, avail;
 	pid_t pid;
 	unsigned long int i;
 	size_t size;
 	_function _functions[] = {{"cd", shell_cd},
 		{"exit", shell_exit}, {"env", shell_env}};
->>>>>>> 035c7f33e4dd52cfa473cc58b17fac4788af8d0a
-
 	size = sizeof(_functions) / sizeof(_function);
 	avail = find_cmd(cmd[0], argv);
 	if (avail)
@@ -53,22 +39,12 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 		perror(argv[0]);
 		exit(1);
 	}
-<<<<<<< HEAD
-	else if (pid > 0)/**parent process*/
-	{
-		do{
-			/**wait for child process to exit*/
-			waitpid(pid, &status, WUNTRACED);
-		}
-		while(!WIFEXITED(status) && !WIFSIGNALED(status));
-=======
 	else if (pid > 0) /**parent process*/
 	{
 		do {
 		/**wait for child process to exit*/
 			waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
->>>>>>> 035c7f33e4dd52cfa473cc58b17fac4788af8d0a
 	}
 	else
 	{
