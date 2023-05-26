@@ -13,6 +13,7 @@ char *_getline(char *line, size_t *size, FILE *buf)
   int a;
   char *ptr = line;
   size_t _size = *size;
+  size_t s;
   
 
   while ((a = fgetc(buf)) != EOF)
@@ -24,13 +25,13 @@ char *_getline(char *line, size_t *size, FILE *buf)
       {
         _size *= 2;
         char *_fptr = _realloc(line,0, _size);
-      if (_fptr == NULL) 
-      {
-        free(line);
-        return NULL;
-      }
+        if (_fptr == NULL) 
+        {
+          free(line);
+          return NULL;
+        }
 
-      line = _ptr;
+      line = _fptr;
       ptr = line + (ptr - line);
     }
 
