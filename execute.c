@@ -11,7 +11,7 @@
  */
 void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 {
-	int status, avail;
+	int status;
 	pid_t pid;
 	unsigned long int i;
 	size_t size;
