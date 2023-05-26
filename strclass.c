@@ -17,3 +17,34 @@ int _strcmp(const char *string1, const char *string2)
 	}
 	return (*string1 - *string2);
 }
+/**
+ * _strlen - gets the length of a string
+ * @s: string
+ * Return: length of the string
+ */
+int _strlen(char *string)
+{
+	int a = 0;
+
+	if (!string)
+		return (0);
+
+	while (*string++)
+		a++;
+	return (a);
+}
+/**
+ * _strcat - joins two strings
+ * @result: destination pointer
+ * @string: source string
+ * Return: pointer to destination buffer
+ */
+char *_strcat(char *result, char *string)
+{
+	while (*result)
+		result++;
+	while (*string)
+		*result++ = *string++;
+	*result = *string;
+	return (result);
+}
