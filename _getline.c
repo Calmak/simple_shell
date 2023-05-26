@@ -6,6 +6,7 @@
 * @size: size
 * @buf: stream
 * Return: pointer to the line
+*/
 
 char *_getline(char *line, size_t *size, FILE *buf) 
 {
