@@ -51,3 +51,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 		perror(argv[0]);
 	}
 }
+int is_interactive()
+{
+	return (isatty(STDIN_FILENO));
+}
