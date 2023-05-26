@@ -47,6 +47,7 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	}
 	argv = NULL;
 	envp = NULL;
+	cmd = NULL;
 	
 }
 int is_interactive()
