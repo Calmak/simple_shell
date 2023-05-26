@@ -45,8 +45,8 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	{
 		perror(argv[0]);
 	}
-	free(argv);
-	free(envp);
-	free(cmd);
+	argv = NULL;
+	envp = NULL;
+	cmd = NULL;
 }
 
