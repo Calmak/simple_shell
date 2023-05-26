@@ -15,7 +15,8 @@ int main(int argc, char **argv, char **envp)
 
 	while (1)
 	{
-		_putchar('$');
+		if (isatty(STDIN_FILENO))
+			_putchar('$');
 		input = get_user_input();
 		if (input == NULL)
 			break;
