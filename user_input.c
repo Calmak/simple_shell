@@ -11,6 +11,11 @@ char *get_user_input(void)
 	size_t buf = 0;
 
 	/*getline handles memory allocations on its own*/
-	getline(&input, &buf, stdin);
+	if (getline(&input, &buf, stdin) == -1)
+	{
+		free(input);
+		exit (1);
+	}
+	
 	return (input);
 }
