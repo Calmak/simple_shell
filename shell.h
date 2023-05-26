@@ -27,8 +27,8 @@ char *_strtok(char *string, const char *delim);
 int _putchar(char c);
 int _strlen(char *);
 int _strcmp(const char *string1, const char *string2);
-char *_strcat(char *, char *);
-char *_strcpy(char *, char *);
+char *_strcat(char *string1, char *string2);
+char *_strcpy(char *string1, char *string2);
 void mputs(const char *to_ouput);
 int find_cmd(char *cmd, char **argv);
 
