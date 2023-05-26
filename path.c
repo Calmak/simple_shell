@@ -23,9 +23,9 @@ int find_cmd(char *cmd, char **argv)
 	{
 		dir = strtok(path, ":");
 		full_path = malloc(strlen(dir) + strlen(cmd) + 2);
-		strcpy(full_path, dir);
-		strcat(full_path, "/");
-		strcat(full_path, cmd);
+		_strcpy(full_path, dir);
+		_strcat(full_path, "/");
+		_strcat(full_path, cmd);
 		if (access(full_path, X_OK) == 0)
 		{
 			is_found = 1;
