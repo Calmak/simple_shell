@@ -45,12 +45,8 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	{
 		perror(argv[0]);
 	}
-	argv = NULL;
-	envp = NULL;
-	cmd = NULL;
-	
+	free(argv);
+	free(envp);
+	free(cmd);
 }
-int is_interactive()
-{
-	return (isatty(STDIN_FILENO));
-}
+
