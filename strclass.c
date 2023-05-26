@@ -48,3 +48,20 @@ char *_strcat(char *result, char *string)
 	*result = *string;
 	return (result);
 }
+/**
+ * *_strcpy - copies contents on one string to the other
+ * @result: destination pointer
+ * @string: source string
+ * Return: pointer to destination buffer
+ */
+char *_strcpy(char *result, const char *string) 
+{
+	char *res = result;
+
+	while (*string != '\0') 
+	{
+		*result++ = *string++;
+	}
+	*result = '\0';
+	return result;
+}
