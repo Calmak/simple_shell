@@ -37,6 +37,7 @@ void shell_exit(char **cmd, int argc, char **envp);
 void shell_cd(char **cmd, int argc, char **envp);
 void shell_env(char **cmd, int argc, char **envp);
 
+int is_interactive();
 size_t get_line(char **line, size_t *len, FILE *fp);
 
 #endif /* _SHELL*/
