@@ -50,6 +50,9 @@ void execute_cmd(char **cmd, int argc, char **argv, char **envp)
 	{
 		perror(argv[0]);
 	}
+	argv = NULL;
+	envp = NULL;
+	
 }
 int is_interactive()
 {
