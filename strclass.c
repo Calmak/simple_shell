@@ -54,7 +54,7 @@ char *_strcat(char *result, char *string)
  * @string: source string
  * Return: pointer to destination buffer
  */
-char *_strcpy(char *result, const char *string) 
+char *_strcpy(char *result, char *string) 
 {
 	char *res = result;
 
@@ -63,5 +63,5 @@ char *_strcpy(char *result, const char *string)
 		*result++ = *string++;
 	}
 	*result = '\0';
-	return result;
+	return res;
 }
