@@ -1,33 +1,44 @@
 #include <stdio.h>
+#include "shell.h"
+/**
+* _getline - returns line typed
+* @line: pointer to the line
+* @size: size
+* @buf: stream
+* Return: pointer to the line
 
-char *getline(char *lineptr, size_t *n, FILE *stream) {
-  char *bufptr = lineptr;
-  size_t size = *n;
-  int c;
+char *_getline(char *line, size_t *size, FILE *buf) 
+{
+  int a;
+  char *ptr = line;
+  size_t size = *size;
+  
 
-  while ((c = fgetc(stream)) != EOF) {
-    if (c == '\n') {
-      break;
-    }
+  while ((a = fgetc(buf)) != EOF)
+  {
+      if (a == '\n') 
+        break;
 
-    if (bufptr - lineptr == size - 1) {
-      size *= 2;
-      char *new_bufptr = realloc(lineptr, size);
-      if (new_bufptr == NULL) {
-        free(lineptr);
+      if (ptr - line == size - 1)
+      {
+        size *= 2;
+        char *_fptr = _realloc(line,0, size);
+      if (_fptr == NULL) 
+      {
+        free(line);
         return NULL;
       }
 
-      lineptr = new_bufptr;
-      bufptr = lineptr + (bufptr - lineptr);
+      line = _ptr;
+      ptr = line + (ptr - line);
     }
 
-    *bufptr++ = c;
+    *ptr++ = a;
   }
 
-  *bufptr = '\0';
-  *n = bufptr - lineptr;
+  *ptr = '\0';
+  *size = ptr - line;
 
-  return lineptr;
+  return line;
 }
 
